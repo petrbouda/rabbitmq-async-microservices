@@ -1,4 +1,4 @@
-package pbouda.blocking.async.spring;
+package pbouda.rabbitmq.server;
 
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;

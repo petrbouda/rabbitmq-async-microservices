@@ -1,4 +1,4 @@
-package pbouda.blocking.async.spring;
+package pbouda.rabbitmq.server;
 
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerConfiguration;

@@ -1,4 +1,4 @@
-package pbouda.blocking.async.spring;
+package pbouda.rabbitmq.server;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;

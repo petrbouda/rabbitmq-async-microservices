@@ -35,8 +35,8 @@ profiler.sh -d 30 -e context-switches -f profile.svg <pid>
 
 ```
 
-java -XX:+PreserveFramePointer -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints /
--XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics /
+java -XX:+PreserveFramePointer -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints \
+-XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics \
 -jar blocking-server-spring/target/blocking-server-spring.jar
 
 ```

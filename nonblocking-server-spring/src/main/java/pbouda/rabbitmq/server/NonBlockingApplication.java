@@ -31,7 +31,7 @@ public class NonBlockingApplication {
 
         @GetMapping("invoke")
         public DeferredResult<ResponseEntity<String>> sendMessage() {
-            var output = new DeferredResult<ResponseEntity<String>>();
+            DeferredResult<ResponseEntity<String>> output = new DeferredResult<>();
 
             rabbitTemplate.sendAndReceive("uppercase", null, Utils.request())
                     .completable()

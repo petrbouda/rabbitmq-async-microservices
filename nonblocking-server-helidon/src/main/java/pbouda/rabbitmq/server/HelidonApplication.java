@@ -26,7 +26,8 @@ public final class HelidonApplication {
                         .port(8080)
                         .build();
 
-        var rabbitTemplate = new AsyncRabbitTemplate(new RabbitTemplate(Utils.connectionFactory()));
+        AsyncRabbitTemplate rabbitTemplate =
+                new AsyncRabbitTemplate(new RabbitTemplate(Utils.connectionFactory()));
         rabbitTemplate.start();
 
         WebServer.create(serverConfig, createRouting(rabbitTemplate))

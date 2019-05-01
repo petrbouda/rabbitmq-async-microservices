@@ -34,9 +34,12 @@ profiler.sh -d 30 -e context-switches -f profile.svg <pid>
 ### Example 
 
 ```
-
-java -XX:+PreserveFramePointer -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints \
--XX:NativeMemoryTracking=summary -XX:+PrintNMTStatistics \
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
 -jar blocking-server-spring/target/blocking-server-spring.jar
 
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
+-jar nonblocking-server-spring/target/nonblocking-server-spring.jar
+
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
+-jar nonblocking-server-helidon/target/nonblocking-server-helidon.jar
 ```

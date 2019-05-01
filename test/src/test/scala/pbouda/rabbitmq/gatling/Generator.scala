@@ -18,7 +18,7 @@ class Generator extends Simulation {
     )
 
   setUp(invocation.inject(
-    rampUsersPerSec(0) to 1000 during FiniteDuration(60, TimeUnit.SECONDS))
+    rampUsers(5000).during(FiniteDuration(60, TimeUnit.SECONDS)))
     .protocols(httpConf))
     .assertions(global.successfulRequests.percent.gte(100))
 }

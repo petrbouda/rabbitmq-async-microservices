@@ -15,7 +15,7 @@ final class Utils {
     }
 
     static CachingConnectionFactory connectionFactory() {
-        var factory = new CachingConnectionFactory();
+        CachingConnectionFactory factory = new CachingConnectionFactory();
         factory.setAddresses("localhost:5672");
         factory.setUsername("admin");
         factory.setPassword("admin");

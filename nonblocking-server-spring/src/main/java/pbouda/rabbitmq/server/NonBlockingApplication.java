@@ -6,19 +6,20 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
 
 @SpringBootApplication
 public class NonBlockingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(new Class[]{NonBlockingApplication.class, MessageController.class}, args);
+        SpringApplication.run(NonBlockingApplication.class, args);
     }
 
-    @RequestMapping
+    @RestController
     public static class MessageController {
 
         private final AsyncRabbitTemplate rabbitTemplate;
@@ -40,5 +41,10 @@ public class NonBlockingApplication {
 
             return output;
         }
+    }
+
+    @Bean
+    public CachingConnectionFactory connectionFactory() {
+        return Utils.connectionFactory();
     }
 }

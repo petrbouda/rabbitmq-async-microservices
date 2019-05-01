@@ -11,7 +11,10 @@
 
     <modules>
         <module>service</module>
-        <module>server</module>
+        <module>blocking-server-spring</module>
+        <module>nonblocking-server-spring</module>
+        <module>nonblocking-server-helidon</module>
+        <module>test</module>
     </modules>
 
     <properties>

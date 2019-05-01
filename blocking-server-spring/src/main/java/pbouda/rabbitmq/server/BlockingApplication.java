@@ -7,16 +7,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class BlockingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(new Class[]{BlockingApplication.class, MessageController.class}, args);
+        SpringApplication.run(BlockingApplication.class, args);
     }
 
-    @RequestMapping
+    @RestController
     public static class MessageController {
 
         private final RabbitTemplate rabbitTemplate;

@@ -50,27 +50,11 @@
       "durable": true,
       "auto_delete": false,
       "arguments": {}
-    },
-    {
-      "name": "reply-to",
-      "vhost": "/",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {}
     }
   ],
   "exchanges": [
     {
       "name": "uppercase",
-      "vhost": "/",
-      "type": "fanout",
-      "durable": true,
-      "auto_delete": false,
-      "internal": false,
-      "arguments": {}
-    },
-    {
-      "name": "reply-to",
       "vhost": "/",
       "type": "fanout",
       "durable": true,
@@ -86,14 +70,6 @@
       "destination": "uppercase_messages",
       "destination_type": "queue",
       "routing_key": "#",
-      "arguments": {}
-    },
-    {
-      "source": "reply-to",
-      "vhost": "/",
-      "destination": "reply-to",
-      "destination_type": "queue",
-      "routing_key": "uppercase",
       "arguments": {}
     }
   ]

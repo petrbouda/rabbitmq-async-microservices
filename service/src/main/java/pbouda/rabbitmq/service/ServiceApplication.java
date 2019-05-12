@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.Random;
+
 @SpringBootApplication
 public class ServiceApplication {
 
@@ -17,11 +19,13 @@ public class ServiceApplication {
     public static class MessageListener {
 
         public String handleMessage(byte[] message) {
-            int sleep = (int) (Math.random() * 500);
+            Random rand = new Random();
+            // Obtain a number between [0 - 49] + 50 = [50 - 99]
+            int n = rand.nextInt(50) + 50;
 
             String content = new String(message);
             try {
-                Thread.sleep(sleep);
+                Thread.sleep(n);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -48,5 +52,4 @@ public class ServiceApplication {
         container.setMessageListener(new MessageListenerAdapter(new MessageListener()));
         return container;
     }
-
 }

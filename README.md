@@ -5,7 +5,7 @@
 docker-compose up
 
 # Start Service which processes a published event with 0-500ms delay
-java -jar service/target/service.jar
+docker run -d -m=500m --cpus="1" --network host rabbitmq-service
 
 # Start one of the Servers
 java -jar blocking-server-spring/target/blocking-server-spring.jar
@@ -28,7 +28,7 @@ https://github.com/petrbouda/async-profiler-playground
 
 ```
 (context-switches / lock / cache-misses / cycles / instructions / cpu / alloc)
-profiler.sh -d 30 -e context-switches -f profile.svg <pid>
+profiler.sh -d 30 -e lock -f profile.svg <pid>
 ```
 
 ### Example 

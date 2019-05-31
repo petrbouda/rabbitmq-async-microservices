@@ -34,12 +34,12 @@ profiler.sh -d 30 -e lock -f profile.svg <pid>
 ### Example 
 
 ```
-java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints \
 -jar blocking-server-spring/target/blocking-server-spring.jar
 
-java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints \
 -jar nonblocking-server-spring/target/nonblocking-server-spring.jar
 
-java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
+java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints \
 -jar nonblocking-server-helidon/target/nonblocking-server-helidon.jar
 ```
